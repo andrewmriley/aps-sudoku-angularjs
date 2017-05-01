@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "angular": "^1.6.3",
-    "angular-ui-router": "^0.4.2",
+    "angular-ui-router": "^1.0.0",
     "babel-cli": "^6.23.0",
     "babel-preset-env": "^1.2.1",
     "grunt": "^1.0.1",
