@@ -2,9 +2,15 @@
 
 angular.module("sudokuApp").component("board", {
     controller: boardController,
-    templateUrl: "src/app/components/board/board.template.html"
+    templateUrl: "src/app/components/board/board.template.html",
+    bindings: {
+        entries: "<"
+    }
 });
 
 function boardController() {
-    console.log('this is the board controller');
+    let ctrl = this;
+
+    ctrl.$onInit = function() {
+    };
 }

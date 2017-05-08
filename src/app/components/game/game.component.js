@@ -1,23 +1,15 @@
 "use strict";
 
 angular.module("sudokuApp").component("game", {
-    controller: gameController,
+    controller: ['generator', gameController],
     templateUrl: "src/app/components/game/game.template.html"
 });
 
-function gameController() {
+function gameController(generator) {
     // L2R T2B linear array of board entries.
-    var entries = [];
-    // Index of entries that were defaulted and cannot be edited.
-    var defaultEntryLocations = [];
+    let ctrl = this;
 
-    this.$onInit = function() {
-        console.log('game controller');
-
-        // @todo - Dev code testing board
-        for (var x = 1; x < 82; x++) {
-            entries.push(x);
-        }
-        console.log(entries);
+    ctrl.$onInit = function() {
+        ctrl.entries = generator.newGame();
     }
 }
